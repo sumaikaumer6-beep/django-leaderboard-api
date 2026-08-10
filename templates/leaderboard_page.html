@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    <style>
+        body{font-family: Arial; text-align: center; background: #f2f2f2;}
+        h1{color: #333;}
+        table{margin: 20px auto; border-collapse: collapse; width: 60%; background: white;}
+        th, td {border: 1px solid #ddd; padding: 12px;}
+        th{ background: gold; color: black;}
+        tr:nth-child(even){background-color: #f9f9f9;}
+    </style>
+</head>
+<body>
+     <h1>Top 10 Leaderboard</h1>
+     <table>
+         <tr><th>Rank</th><th>Player Name</th><th>Score</th></tr>
+            {% for s in score %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ s.player_name }}</td>
+                    <td>{{ s.score }}</td>
+                </tr>
+            {% endfor %}
+     </table>
+
+</body>
+</html>
